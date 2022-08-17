@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { PhoneBookComponent } from './phonebook/phonebook.component';
 
 @Component({
   selector: 'pb-root',
-  templateUrl: './app.component.html',
+  template: `<div>
+                <h1>{{title}}</h1>
+                <pb-phonebook></pb-phonebook>
+              </div>`,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'phonebook';
+  title = 'My Phone Book';
 }

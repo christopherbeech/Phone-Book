@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+      <main>
+        
+        
+  
+        <form #userlogin="ngForm" class="new-item-form">
+          <div class="field">
+            <label>First Name :</label>
+            <input type="text" id="fName" name="fName" placeholder="e.g. John" required [(ngModel)]="newContact.firstName">
+          </div>   
+          <div class="field">
+            <label>Last Name :</label>
+            <input type="text" id="lName" name="lName"placeholder="e.g. Wick" required [(ngModel)]="newContact.lastName">
+          </div>
+         <div class="field">
+            <label>Phone Number :</label>
+            <input type="tel" id="phone" name="pNum" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" [(ngModel)]="newContact.phoneNumber">
+          </div> 
+          <button (click)="addContact(newContact)">Add</button>
+        </form>
+    </main>
+    <div class="searchbar">
+        <label>Search My Contacts</label>
+        <input type="text" placeholder="Search..." [(ngModel)]="filterList">
+    </div>
+    <footer class="wrapper">
+        <!-- <h1>Phonebook</h1> -->
+        <!-- output list -->
+        <p>{{firstName}}</p>
+        <table *ngIf="contacts.length">
+          <thead>
+            <tr>
+              <th></th>
+              <th>First Name</th>
+              <th>Last Name</th>
+             <th>Phone Number</th>
+              <th></th>
+            </tr>      
+          </thead>
+          <tbody>
+            <tr *ngFor="let contact of filteredContacts; let i = index">
+              <td class="id">{{contact.id}}</td>
+              <td>{{contact.firstName}}</td>
+              <td>{{contact.lastName}}</td>
+              <td>{{contact.phoneNumber}}</td>
+             <td><button class="btn" (click)="deleteInfo(i)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+    </footer>
+</body>
+</html>
