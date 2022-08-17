@@ -1,4 +1,8 @@
 # Phonebook
+Instructions- Write your first name, last name, and phone number in the input text box. Then press enter.
+Your information with be log into the phonebook.
+Search for an already existing contact in the search bar.
+Delete Contacts be clicking the delete button
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
 
